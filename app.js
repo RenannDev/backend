@@ -37,4 +37,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ erro: 'Erro interno!' });
 });
 
+app.get('/users/:id', (req, res) => {
+  console.log('Parâmetros de rota:', req.params);
+  console.log('Parâmetros de query:', req.query);
+  res.send('Veja o console!');
+});
+
+
 app.listen(3000, () => console.log('Servidor rodando em http://localhost:3000'));
